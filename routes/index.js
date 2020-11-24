@@ -13,7 +13,9 @@ router.get('/', function(req, res, next) {
         client = await MongoClient.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true });
         const db = client.db(dbName);
         const response = await db.collection('books').find().toArray();
-        res.json(response);
+        
+        res.render('index', {books:response});
+
       } catch (err) {
           console.log(err);
       }
