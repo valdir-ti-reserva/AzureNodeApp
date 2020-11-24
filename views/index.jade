@@ -2,6 +2,8 @@ extends layout
 
 block content
   each book in books
-    div 
+    div
+      div
+        img(src="https://nodeapplibrary.blob.core.windows.net/covers/" + book._id + ".jpg", alt=book.title)
       h3=book.title
       h4=book.author
